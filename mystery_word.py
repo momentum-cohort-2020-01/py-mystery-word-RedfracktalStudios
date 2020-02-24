@@ -30,15 +30,13 @@ def mystery_word():
         # f-string ~ formatted string literal will pull <attempts> count into this print statement
 
         print('Y' if attempts > 0 else '')
-        print('Y' + '(' if attempts > 1 else '')
-        print('Y(' + ')' if attempts > 2 else '')
-        print('Y()'+'U' if attempts > 3 else '')
-        print('Y()U' + ' L' if attempts > 4 else '')
-        print('Y()U L' + '(' if attempts > 5 else '')
-        print('Y()U L(' + ')' if attempts > 6 else '')
-        print('Y()U L()' + 'S' if attempts > 7 else '')
-        print('Y()U L()S' + 'E' if attempts > 8 else '')
-        print('Y()U L()SE' if attempts > 9 else '')
+        print('Y()' if attempts > 1 else '')
+        print('Y()'+'U' if attempts > 2 else '')
+        print('Y()U L(' + ')' if attempts > 3 else '')
+        print('Y()U L()' + 'S' if attempts > 4 else '')
+        print('Y()U L()S' + 'E' if attempts > 5 else '')
+        print('Y()U L()SE'+'!' if attempts > 6 else '')
+        print('S()RRY!' + 'Y()U L()SE'+'!' if attempts > 7 else '')
 
         # ask the player for a character
 
@@ -66,7 +64,7 @@ def mystery_word():
             attempts += 1
 
     # if player wins print you win and stop loop
-        if (all(word[i] == character for character in word)):
+        if (all('_' == character for character in word)):
 
             print('Yeah!, you won!')
             isGameOver = True
