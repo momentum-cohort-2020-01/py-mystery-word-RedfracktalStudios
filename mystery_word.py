@@ -51,7 +51,8 @@ def mystery_word():
                 character = word[i]
                 if character == letterGuessed:
                     hidden[i] = word[i]
-                    word[i] = '_'
+                    print(word[i])
+                    # word[i] = '_'
 
             '''
             string_to_iterate = "string"
@@ -64,7 +65,7 @@ def mystery_word():
             attempts += 1
 
     # if player wins print you win and stop loop
-        if (all('_' == char for char in word)):
+        if (all('_' == character for character in word)):
             print('Yeah!, you won!')
             isGameOver = True
 
