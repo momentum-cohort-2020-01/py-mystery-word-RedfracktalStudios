@@ -38,6 +38,7 @@ def mystery_word():
         print('Y()U L(' + ')' if attempts > 6 else '')
         print('Y()U L()' + 'S' if attempts > 7 else '')
         print('Y()U L()S' + 'E' if attempts > 8 else '')
+        print('Y()U L()SE' if attempts > 9 else '')
 
         # ask the player for a character
 
@@ -65,7 +66,8 @@ def mystery_word():
             attempts += 1
 
     # if player wins print you win and stop loop
-        if (all('_' == character for character in word)):
+        if (all(word[i] == character for character in word)):
+
             print('Yeah!, you won!')
             isGameOver = True
 
